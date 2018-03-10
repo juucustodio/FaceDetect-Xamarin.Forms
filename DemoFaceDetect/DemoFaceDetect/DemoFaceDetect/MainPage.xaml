@@ -1,11 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:DemoFaceDetect"
              x:Class="DemoFaceDetect.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center">
+                <Image x:Name="MinhaImagem" Aspect="AspectFill" HeightRequest="200" 
+                       WidthRequest="400" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            
+            <Button Clicked="TakePicture" Text="Foto"></Button>
+            <Label Text="Faces: " FontAttributes="Bold" FontSize="20"  
+                        HorizontalOptions="CenterAndExpand"/>
+            
+            <ListView x:Name="FacesListView"
+                      IsPullToRefreshEnabled="true"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Sexo:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Gender}"></Label>
+                                    <Label Text="Idade:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Age}"></Label>
+                                    <Label Text="Óculos:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Glasses}"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Raiva:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Emotion.Anger}"></Label>
+                                    <Label Text="Felicidade:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Emotion.Happiness}"></Label>
+                                    <Label Text="Desprezo:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Emotion.Contempt}"></Label>
+                                    <Label Text="Surpreso:" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding FaceAttributes.Emotion.Surprise}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
