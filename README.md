@@ -13,8 +13,8 @@
 
 # FaceDetect-Xamarin.Forms
 This example show how to use Microsoft Cognitive Services Face Detect API in Xamarin.Forms applications.
-<a href="https://julianocustodio.com/2018/03/01/native-message/" target="_blank"><b> Read post</b></a></br> 
-<a href="https://julianocustodio.com/2018/03/01/native-message/">
+<a href="https://julianocustodio.com/facedetect-xamarin-forms/" target="_blank"><b> Read post</b></a></br> 
+<a href="https://julianocustodio.com/facedetect-xamarin-forms/">
 <image width="800px" src="https://julianocustodiosite.files.wordpress.com/2018/03/walldetect.png?w=768"/></a>
 
 <br/>
